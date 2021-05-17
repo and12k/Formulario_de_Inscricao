@@ -38,14 +38,14 @@
                 <div class="campo">
                     <label for="cpf"><strong>CPF (*)</strong></label>
                     <input type="text" name="cpf" id="cpf" placeholder="Campo obrigatório(Digite somente numero" required>
-                    <button class="botaoValidar" type="submit" onsubmit="">Validar CPf</button>
+                    <button class="botaoValidar" type="button" onclick="validacaoCpf()">Validar CPF</button>
                 </div>
                 
 
                 <!-- Campo do sobrenome com legenda "RG" e css de classe "campo" -->
                 <div class="campo">
                     <label for="rg"><strong>RG (*)</strong></label>
-                    <input type="text" name="rg" id="rg"placeholder="Digite somente numeros" required>
+                    <input type="text" name="rg" id="rg" placeholder="Digite somente numeros" required>
                     <button class="botaoValidar" type="submit" onsubmit="">Validar RG</button>
                 </div>
 
@@ -147,6 +147,6 @@
     </form>
 
 </body>
-<script src="./scriptcpf.js"></script>
+<script src="./scriptValidacao.js"></script>
 
 </html>
