@@ -128,7 +128,7 @@
                 <input type="radio" name="possuiDeficiencia" value="nao" checked> Nao
             </label>
             <label id="radioButton">
-                <input type="radio" name="possuiDeficiencia" value="sim"> Sim
+                <input type="radio" name="possuiDeficiencia" value="sim" > Sim
             </label>
         </div>
 
@@ -145,6 +145,15 @@
         <button class="botao" type="submit" onsubmit="">Concluído</button>
 
     </form>
+
+    <div class="alerta">
+        <div id="success" class="alert" style="display: none;" role="alert"> 
+            <strong>Muito bom!</strong> Seus dados foram validados com sucesso!
+        </div>
+        <div id="error" class="alert" style="display: none;" role="alert" > 
+            <strong>Ops!</strong> parece que os dados inseridos não são validos!
+        </div>
+    </div>
 
 </body>
 <script src="./scriptValidacao.js"></script>
