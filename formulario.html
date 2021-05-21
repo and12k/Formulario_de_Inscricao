@@ -37,7 +37,7 @@
                 <!-- Campo do sobrenome com legenda "CPF" e css de classe "campo" -->
                 <div class="campo">
                     <label for="cpf"><strong>CPF (*)</strong></label>
-                    <input type="text" name="cpf" id="cpf" placeholder="Campo obrigatório(Digite somente numero" required>
+                    <input type="text" name="cpf" id="cpf" placeholder="Digite somente numero" required>
                     <button class="botaoValidar" type="button" onclick="validacaoCpf()">Validar CPF</button>
                 </div>
                 
@@ -46,7 +46,7 @@
                 <div class="campo">
                     <label for="rg"><strong>RG (*)</strong></label>
                     <input type="text" name="rg" id="rg" placeholder="Digite somente numeros" required>
-                    <button class="botaoValidar" type="submit" onsubmit="">Validar RG</button>
+                    <button class="botaoValidar" type="button" onclick="validacaoRg()">Validar RG</button>
                 </div>
 
                 <!-- Campo do sobrenome com legenda "Telefone Fixo" e css de classe "campo" -->
@@ -142,7 +142,7 @@
         </div>
 
         <!-- Botão para enviar o formulário -->
-        <button class="botao" type="submit" onsubmit="">Concluído</button>
+        <button class="botao" type="submit" onsubmit="">Enviar cadastro</button>
 
     </form>
 
