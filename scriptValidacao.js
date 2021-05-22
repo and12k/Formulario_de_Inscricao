@@ -1,18 +1,16 @@
 /* ------- Validação do CPF no formulário ------- */
 function validacaoCpf() {
     console.log('Iniciando validação CPF');
-    document.getElementById('success').style.display = 'none';
-    document.getElementById('error').style.display = 'none';
 
     var cpf = document.getElementById('cpf').value;
 
     var resultadoValidacao = validaCpf(cpf);
     /* IF, Condição de teste se o cpf é Valido  */
     if (resultadoValidacao == true) {
-        document.getElementById('success').style.display = 'block';
+        
     }
     else {
-        document.getElementById('error').style.display = 'block';
+        alert("CPF invalido! \n\nPor favor insira um CPF valido");
     }
 
 }
@@ -21,6 +19,9 @@ function validaCpf(cpf) {
     /* Primeira validação, quantidade de digitos dos cpf deve ser de exatamennte 11 */
     console.log(cpf.length);
 
+    /*Aplicação de regex para retirar traços ou pontos inseridos pelo usuario acidentalmente */
+    cpf = cpf.replace(/[^0-9]/g,'');
+    console.log (cpf);
     if (cpf == "00000000000") {
         return false;
     }
@@ -34,7 +35,6 @@ function validaCpf(cpf) {
         var digitos = cpf.substring(9);
         /* Variavel para incremento dos valores calculados no for abaixo */
         var somaCpf = 0;
-        /* Variavel para controle do laço */
         /*Laço de repetição para percorrer por valor da substring do ultimo caractere até o primeiro.*/
         /* Validação do primeiro digito*/
         for (var i = 10; i > 1; i--) {
@@ -47,7 +47,7 @@ function validaCpf(cpf) {
             return false;
         }
 
-        /* Validação do primeiro digito */
+        /* Validação do segundo digito */
         somaCpf = 0;
         numeros = cpf.substring(0, 10);
 
@@ -66,31 +66,32 @@ function validaCpf(cpf) {
     }
 
 }
+////////////////////////////////////////////////////
 
+/* ------- Validação do RG no formulário ------- */
 function validacaoRg() {
     console.log('Iniciando validação do RG');
-    document.getElementById('success').style.display = 'none';
-    document.getElementById('error').style.display = 'none';
 
     var rg = document.getElementById('rg').value;
 
     var resultadoValidacao = validaRg(rg);
     /* IF, Condição de teste se o Rg é Valido  */
     if (resultadoValidacao == true) {
-        document.getElementById('success').style.display = 'block';
+    
     }
     else {
-        document.getElementById('error').style.display = 'block';
+        alert("RG invalido! \n\nPor favor insira um outro numero de RG");
     }
 
 
 }
 
-
 function validaRg(rg) {
     /* Primeiras validações, quantidade de numeros do rg deve deve ter exatamente 9 
     e o não pode ser preenchido com 000000000*/
     console.log(rg.length);
+
+    rg = rg.replace(/[^0-9]/g,'');
 
     if (rg == "000000000") {
         return false;
@@ -134,9 +135,61 @@ function validaRg(rg) {
     {
         return false;
     }
-
-
-
-
-
 }
+////////////////////////////////////////////////////
+
+/* ------- Validação do CEP no formulário ------- */
+function validacaoCep(){
+    console.log('Iniciando a validação do CEP')
+    var cep = document.getElementById('cep').value;
+    var resultadoValidacao = validaCep(cep);
+    /*IF para respota da validação do cep */
+    
+    if (resultadoValidacao == true){
+            //atribuir os dados carregados aos campos 
+    }
+    else{
+        //Limpar formulário de cep
+        document.getElementById('logradouro').value=("");
+        document.getElementById('bairro').value=("");
+        document.getElementById('cidade').value=("");
+        document.getElementById('estado').value=("");
+        alert("\nCep não encontrado")
+    }
+}
+
+function validaCep(cep){
+    //Validando quantidade de digitos no cep
+    cep = cep.replace(/[^0-9]/g,'');
+ 
+    if(cep.length != 8){
+        return false;
+
+    }
+    
+    //Cria um elemento javascript.
+    var script = document.createElement('script')
+    //Sincroniza com a validacao
+    script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=retornoViaCep';
+    console.log(script)
+
+    //Insere script no documento e carrega o conteudo
+    document.body.appendChild(script);
+    console.log(script)
+    return true;
+}
+
+function retornoViaCep(endereco){
+    if(!("erro" in endereco)){
+        //atualização dos campos com os valores.
+        document.getElementById('logradouro').value=endereco.logradouro;
+        document.getElementById('bairro').value=endereco.bairro;
+        document.getElementById('cidade').value=endereco.localidade;
+        document.getElementById('estado').value=endereco.uf;
+    }
+    else{
+        
+        return false;
+    }
+}
+////////////////////////////////////////////////////

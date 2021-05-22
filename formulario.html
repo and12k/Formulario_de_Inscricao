@@ -38,15 +38,14 @@
                 <div class="campo">
                     <label for="cpf"><strong>CPF (*)</strong></label>
                     <input type="text" name="cpf" id="cpf" placeholder="Digite somente numero" onblur="validacaoCpf()" required >
-                    <button class="botaoValidar" type="button" onclick="validacaoCpf()">Validar CPF</button>
+                    
                 </div>
                 
 
                 <!-- Campo do sobrenome com legenda "RG" e css de classe "campo" -->
                 <div class="campo">
                     <label for="rg"><strong>RG (*)</strong></label>
-                    <input type="text" name="rg" id="rg" placeholder="Digite somente numeros" required>
-                    <button class="botaoValidar" type="button" onclick="validacaoRg()">Validar RG</button>
+                    <input type="text" name="rg" id="rg" placeholder="Digite somente numeros" onblur="validacaoRg()" required>
                 </div>
 
                 <!-- Campo do sobrenome com legenda "Telefone Fixo" e css de classe "campo" -->
@@ -92,7 +91,7 @@
                 <div class="campo">
                     <label for="cep"><strong>CEP (*)</strong></label>
                     <input type="text" name="cep" id="cep" placeholder="Digite somente numeros" required>
-                    <button class="botaoValidar" type="submit" onsubmit="">Validar CEP</button>
+                    <button class="botaoValidar" type="button" onclick="validacaoCep()">Validar CEP</button>
                 </div>
                 <div class="campo">
                     <label for="logradouro"><strong>Logradouro(*)</strong></label>
@@ -116,7 +115,7 @@
                 </div>
                 <div class="campo">
                     <label for="Estado"><strong>Estado(*)</strong></label>
-                    <input type="text" name="Estado" id="Estado" required>
+                    <input type="text" name="estado" id="estado" required>
                 </div>
             </fieldset>
 
@@ -146,16 +145,6 @@
 
     </form>
 
-    <div class="alerta">
-        <div id="success" class="alert" style="display: none;" role="alert"> 
-            <strong>Muito bom!</strong> Seus dados foram validados com sucesso!
-        </div>
-        <div id="error" class="alert" style="display: none;" role="alert" > 
-            <strong>Ops!</strong> parece que os dados inseridos não são validos!
-        </div>
-    </div>
-
 </body>
 <script src="./scriptValidacao.js"></script>
-
 </html>
