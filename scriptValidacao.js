@@ -112,7 +112,7 @@ function validaRg(rg) {
     }
     /*Encontrar o resto da soma*/
     var digitoVerificador = somaRg % 11;
-
+    console.log(digitoVerificador)
     /*Se o digito verificador for igual a 1, ele quer dizer que o digito verificador é X*/
     if (digitoVerificador == 1) {
         digitoVerificador = "x";

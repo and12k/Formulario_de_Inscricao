@@ -37,7 +37,7 @@
                 <!-- Campo do sobrenome com legenda "CPF" e css de classe "campo" -->
                 <div class="campo">
                     <label for="cpf"><strong>CPF (*)</strong></label>
-                    <input type="text" name="cpf" id="cpf" placeholder="Digite somente numero" required>
+                    <input type="text" name="cpf" id="cpf" placeholder="Digite somente numero" onblur="validacaoCpf()" required >
                     <button class="botaoValidar" type="button" onclick="validacaoCpf()">Validar CPF</button>
                 </div>
                 
