@@ -26,8 +26,10 @@
     <form form action="mailto:andre-12-k@gmail.com" method="post" enctype="multipart/form-data" name="registerForm">
         <!-- Primeira parte do formulário serve para o preenchimento dos dados de identificação pessoal do usuário-->
         <div id="identificacaoPessoal">
-            
             <fieldset class="grupo">
+                <legend>
+                    <h3>Idenfiticação pessoal<h3>
+                </legend>
                 <!-- Campo do nome com legenda "nome" e css de classe "campo" -->
                 <div class="campo">
                     <label for="nome"><strong>Nome (*)</strong></label>
@@ -37,15 +39,15 @@
                 <!-- Campo do sobrenome com legenda "CPF" e css de classe "campo" -->
                 <div class="campo">
                     <label for="cpf"><strong>CPF (*)</strong></label>
-                    <input type="text" name="cpf" id="cpf" placeholder="Digite somente numero" onblur="validacaoCpf()" required >
-                    
+                    <input type="text" name="cpf" id="cpf" placeholder="Digite somente numero" onblur="validacaoCpf()"
+                         maxlength="14" onkeyup="mascaraCpf()" required >
                 </div>
-                
 
                 <!-- Campo do sobrenome com legenda "RG" e css de classe "campo" -->
                 <div class="campo">
                     <label for="rg"><strong>RG (*)</strong></label>
-                    <input type="text" name="rg" id="rg" placeholder="Digite somente numeros" onblur="validacaoRg()" required>
+                    <input type="text" name="rg" id="rg" placeholder="Digite somente numeros" onblur="validacaoRg()"
+                        maxlength="12" required onkeyup="mascaraRg()">
                 </div>
 
                 <!-- Campo do sobrenome com legenda "Telefone Fixo" e css de classe "campo" -->
@@ -57,40 +59,42 @@
                 <!-- Campo do sobrenome com legenda "Telefone Celular" e css de classe "campo" -->
                 <div class="campo">
                     <label for="telefoneCelular"><strong>Telefone Celular (*)</strong></label>
-                    <input type="text" name="telefoneCelular" id="telefoneCelular" placeholder="(xx) 9xxxx-xxxx" required>
+                    <input type="text" name="telefoneCelular" id="telefoneCelular" placeholder="(xx) 9xxxx-xxxx"
+                        required>
                 </div>
-            
 
-            <!-- Campo de email-->
-            <div class="campo">
-                <label for="email"><strong>Email</strong></label>
-                <input type="email" name="email" id="email">
-            </div>
+
+                <!-- Campo de email-->
+                <div class="campo">
+                    <label for="email"><strong>Email</strong></label>
+                    <input type="email" name="email" id="email">
+                </div>
+
+                <!-- Campo de senioridade com 3 opções para escolha (select option) e css de classe "campo" -->
+                <div class="campo">
+                    <label for="orientacaoSexual"><strong>Orientação sexual (*)</strong></label>
+                    <select id="orientacaoSexual" required>
+                        <option selected disabled value="">Selecione</option>
+                        <option>Masculino</option>
+                        <option>Feminino</option>
+                        <option>Homem transgênero</option>
+                        <option>Mulher transgênero</option>
+                        <option>Homem transexual</option>
+                        <option>Mulher transexual</option>
+                        <option>Cisgênero</option>
+                        <option>Não sei responder</option>
+                        <option>Prefiro não responder</option>
+                        <option>Outros</option>
+                    </select>
+                </div>
             </fieldset>
-            <!-- Campo de senioridade com 3 opções para escolha (select option) e css de classe "campo" -->
-            <div class="campo">
-                <label for="sexo"><strong>Sexo (*)</strong></label>
-                <select id="sexo" required>
-                    <option selected disabled value="">Selecione</option>
-                    <option>Masculino</option>
-                    <option>Feminino</option>
-                    <option>Homem transgênero</option>
-                    <option>Mulher transgênero</option>
-                    <option>Homem transexual</option>
-                    <option>Mulher transexual</option>
-                    <option>Cisgênero</option>
-                    <option>Não sei responder</option>
-                    <option>Prefiro não responder</option>
-                    <option>Outros</option>
-                </select>
-            </div>
         </div>
-
+        
         <div id="endereco">
             <fieldset class="grupo">
                 <div class="campo">
                     <label for="cep"><strong>CEP (*)</strong></label>
-                    <input type="text" name="cep" id="cep" placeholder="Digite somente numeros" required>
+                    <input type="text" name="cep" id="cep" placeholder="Digite somente numeros" maxlength="9" onkeyup="mascaraCep()" required>
                     <button class="botaoValidar" type="button" onclick="validacaoCep()">Validar CEP</button>
                 </div>
                 <div class="campo">
@@ -127,7 +131,7 @@
                 <input type="radio" name="possuiDeficiencia" value="nao" checked> Nao
             </label>
             <label id="radioButton">
-                <input type="radio" name="possuiDeficiencia" value="sim" > Sim
+                <input type="radio" name="possuiDeficiencia" value="sim"> Sim
             </label>
         </div>
 
@@ -147,4 +151,5 @@
 
 </body>
 <script src="./scriptValidacao.js"></script>
+
 </html>
