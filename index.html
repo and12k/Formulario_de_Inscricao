@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="formulario.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/formulario.css" media="screen">
 
     <!-- Título da página (aparece na aba) -->
     <title>Desafio Cadastro Pessoal - Atração</title>
@@ -53,14 +53,13 @@
                 <!-- Campo do sobrenome com legenda "Telefone Fixo" e css de classe "campo" -->
                 <div class="campo">
                     <label for="telefoneFixo"><strong>Telefone Fixo (*)</strong></label>
-                    <input type="text" name="telefoneFixo" id="telefoneFixo" placeholder="(xx) xxxx-xxxx" required>
+                    <input type="text" name="telefoneFixo" id="telefoneFixo" placeholder="" required>
                 </div>
 
                 <!-- Campo do sobrenome com legenda "Telefone Celular" e css de classe "campo" -->
                 <div class="campo">
                     <label for="telefoneCelular"><strong>Telefone Celular (*)</strong></label>
-                    <input type="text" name="telefoneCelular" id="telefoneCelular" placeholder="(xx) 9xxxx-xxxx"
-                        required>
+                    <input type="text" name="telefoneCelular" id="telefoneCelular" placeholder=""  required>
                 </div>
 
 
@@ -150,6 +149,9 @@
     </form>
 
 </body>
-<script src="./scriptValidacao.js"></script>
+<script src="scripts\script-cpf.js"></script>
+<script src="scripts\script-rg.js"></script>
+<script src="scripts\script-cep.js"></script>
+
 
 </html>
