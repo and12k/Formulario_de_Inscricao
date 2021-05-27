@@ -2,9 +2,9 @@
 function validacaoCpf() {
     console.log('Iniciando validação CPF');
 
-    var cpf = document.getElementById('cpf').value;
+    let cpf = document.getElementById('cpf').value;
 
-    var resultadoValidacao = validaCpf(cpf);
+    let resultadoValidacao = validaCpf(cpf);
     /* IF, Condição de teste se o cpf é Valido  */
     if (resultadoValidacao == true) {
 
@@ -31,19 +31,19 @@ function validaCpf(cpf) {
     }
     else {
         /* Iniciando nova validação do texto, quebrando em partes com substring*/
-        var numeros = cpf.substring(0, 9);
+        let numeros = cpf.substring(0, 9);
         /* Captura dos digitos do CPF */
-        var digitos = cpf.substring(9);
-        /* Variavel para incremento dos valores calculados no for abaixo */
-        var somaCpf = 0;
+        let digitos = cpf.substring(9);
+        /* letiavel para incremento dos valores calculados no for abaixo */
+        let somaCpf = 0;
         /*Laço de repetição para percorrer por valor da substring do ultimo caractere até o primeiro.*/
         /* Validação do primeiro digito*/
-        for (var i = 10; i > 1; i--) {
+        for (let i = 10; i > 1; i--) {
             console.log(somaCpf)
             somaCpf += numeros.charAt(10 - i) * i;
 
         }
-        var resultado = somaCpf % 11 < 2 ? 0 : 11 - (somaCpf % 11);
+        let resultado = somaCpf % 11 < 2 ? 0 : 11 - (somaCpf % 11);
         if (resultado != digitos.charAt(0)) {
             return false;
         }
@@ -52,7 +52,7 @@ function validaCpf(cpf) {
         somaCpf = 0;
         numeros = cpf.substring(0, 10);
 
-        for (var k = 11; k > 1; k--) {
+        for (let k = 11; k > 1; k--) {
             console.log(somaCpf)
             somaCpf += numeros.charAt(11 - k) * k;
         }
@@ -67,10 +67,12 @@ function validaCpf(cpf) {
     }
 
 }
+
 function mascaraCpf() {
     console.log("1º: " + cpf.value)
     cpf.value = formulaMascaraCpf(cpf.value)
 }
+
 function formulaMascaraCpf(cpf) {
     console.log("2º: " + cpf)
     cpf = cpf.replace(/\D/g, "")
