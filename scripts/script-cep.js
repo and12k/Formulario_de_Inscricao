@@ -5,8 +5,10 @@ function validacaoCep() {
     var cep = document.getElementById('cep').value;
     var resultadoValidacao = validaCep(cep);
     /*IF para respota da validação do cep */
-
+    var form = document.querySelectorAll('required')
+    console.log(form.value)
     if (resultadoValidacao == true) {
+        
     }
     else {
         //Limpar formulário de cep
@@ -58,4 +60,8 @@ function formulaMascaraCep(cep) {
     cep = cep.replace(/\D/g, "")
     cep = cep.replace(/(\d{5})(\d{1,3})$/, "$1-$2")
     return cep;
+}
+
+{
+    getSelection('required')
 }

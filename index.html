@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="css/formulario.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
 
     <!-- Título da página (aparece na aba) -->
     <title>Desafio Cadastro Pessoal - Atração</title>
@@ -18,157 +18,147 @@
     <!-- Cabeçalho com título e subtítulo (ambos com css de id "titulo") -->
 
     <div id="main-container">
-
-        <div>
-            <h1 id="titulo">Formulario de preenchimento de cadastro</h1>
-            <p id="subtitulo">Complete com suas informações, os campos com * são obrigatórios</p>
-            <br>
-        </div>
-
-
         <!-- Início do formulário -->
-        <form form action="mailto:andre-12-k@gmail.com" method="post" enctype="multipart/form-data" name="registerForm">
+        <form form id="registerForm">
             <!-- Primeira parte do formulário serve para o preenchimento dos dados de identificação pessoal do usuário-->
+            <div>
+                <h1 id="titulo">Formulario de preenchimento de cadastro</h1>
+                <p id="subtitulo">Complete com suas informações (os campos com * são obrigatórios)</p>
+                <br>
+            </div>
+            <div id="identificacaoPessoal">
+
+                <fieldset class="grupo">
+
+
+                    <!-- Campo do nome com legenda "nome" e css de classe "campo" -->
+                    <div class="campo-inteiro">
+                        <label for="nome"><strong>Nome (*)</strong></label>
+                        <input type="text" name="nome" id="nome" required placeholder="Informe seu nome completo">
+                    </div>
+
+                    <!-- Campo do sobrenome com legenda "CPF" e css de classe "campo" -->
+                    <div class="campo-metade espaco">
+                        <label for="cpf"><strong>CPF (*)</strong></label>
+                        <input type="text" name="cpf" id="cpf" placeholder="Digite somente numero"
+                            onblur="validacaoCpf()" maxlength="14" onkeyup="mascaraCpf()" required>
+                    </div>
+
+                    <!-- Campo do sobrenome com legenda "RG" e css de classe "campo" -->
+                    <div class="campo-metade">
+                        <label for="rg"><strong>RG (*)</strong></label>
+                        <input type="text" name="rg" id="rg" placeholder="Digite somente numeros" onblur="validacaoRg()"
+                            maxlength="12" required onkeyup="mascaraRg()">
+                    </div>
+
+                    <!-- Campo do sobrenome com legenda "Telefone Fixo" e css de classe "campo" -->
+                    <div class="campo-metade espaco">
+                        <label for="telefoneFixo"><strong>Telefone Fixo (*)</strong></label>
+                        <input type="text" name="telefoneFixo" id="telefoneFixo" placeholder="Digite somente números, com DDD sem o 0">
+                    </div>
+
+                    <!-- Campo do sobrenome com legenda "Telefone Celular" e css de classe "campo" -->
+                    <div class="campo-metade">
+                        <label for="telefoneCelular"><strong>Telefone Celular (*)</strong></label>
+                        <input type="text" name="telefoneCelular" id="telefoneCelular" placeholder="Digite somente números, com DDD sem o 0" required>
+                    </div>
+
+
+                    <!-- Campo de email-->
+                    <div class="campo-inteiro">
+                        <label for="email"><strong>Email</strong></label>
+                        <input type="email" name="email" id="email" placeholder="Informe seu email">
+                    </div>
+
+                    <!-- Campo de senioridade com 3 opções para escolha (select option) e css de classe "campo" -->
+                    <div class="campo-inteiro">
+                        <label for="orientacaoSexual"><strong>Orientação sexual (*)</strong></label>
+                        <select id="orientacaoSexual" required>
+                            <option selected disabled value="">Selecione</option>
+                            <option>Masculino</option>
+                            <option>Feminino</option>
+                            <option>Homem transgênero</option>
+                            <option>Mulher transgênero</option>
+                            <option>Homem transexual</option>
+                            <option>Mulher transexual</option>
+                            <option>Cisgênero</option>
+                            <option>Não sei responder</option>
+                            <option>Prefiro não responder</option>
+                            <option>Outros</option>
+                        </select>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div id="endereco">
+
+                <fieldset class="grupo">
+                    <div class="campo-metade espaco">
+                        <label for="cep"><strong>CEP (*)</strong></label>
+                        <input type="text" name="cep" id="cep" placeholder="Digite somente numeros" maxlength="9"
+                            onkeyup="mascaraCep()" onblur="validacaoCep()" required>
+                    </div>
+                    <div class="campo-metade">
+                        <label for="logradouro"><strong>Logradouro(*)</strong></label>
+                        <input type="text" name="logradouro" id="logradouro" placeholder="Informe seu endereço" required>
+                    </div>
+                    <div class="campo-metade espaco">
+                        <label for="complemento"><strong>Complemento</strong></label>
+                        <input type="text" name="complemento" id="complemento">
+                    </div>
+                    <div class="campo-metade">
+                        <label for="numero"><strong>Numero (*)</strong></label>
+                        <input type="text" name="numero" id="numero" placeholder="Digite seu numero de endereço" required>
+                    </div>
+                    <div class="campo-metade espaco">
+                        <label for="bairro"><strong>Bairro(*)</strong></label>
+                        <input type="text" name="bairro" id="bairro" placeholder="Informe o bairro onde você mora" required>
+                    </div>
+                    <div class="campo-metade">
+                        <label for="cidade"><strong>Cidade(*)</strong></label>
+                        <input type="text" name="cidade" id="cidade" placeholder="Informe a cidade onde você mora"required>
+                    </div>
+                    <div class="campo-metade">
+                        <label for="Estado"><strong>Estado(*)</strong></label>
+                        <input type="text" name="estado" id="estado" placeholder="Informe o estado onde você mora" required>
+                    </div>
+
+                </fieldset>
+            </div>
+            <!-- Espaço de seleção com Radio button para o usuário dizer se tem deficiência caso possua -->
             
-                <div id="identificacaoPessoal">
-                    
-                    <fieldset class="grupo">
-                        <legend>
-                            <h3>Idenfiticação pessoal<h3>
-                        </legend>
-                        <br>
-                        <!-- Campo do nome com legenda "nome" e css de classe "campo" -->
-                        <div class="campo">
-                            <label for="nome"><strong>Nome (*)</strong></label>
-                            <input type="text" name="nome" id="nome" required>
-                        </div>
+            <div>
+                <label><strong>Possui algum tipo de deficiência?:</strong></label>
+                <input id="radioButton" type="radio" name="possuiDeficiencia" value="nao" checked> Nao
+                <input id="radioButton" type="radio" name="possuiDeficiencia" value="sim"> Sim
+            </div>
 
-                        <!-- Campo do sobrenome com legenda "CPF" e css de classe "campo" -->
-                        <div class="campo">
-                            <label for="cpf"><strong>CPF (*)</strong></label>
-                            <input type="text" name="cpf" id="cpf" placeholder="Digite somente numero"
-                                onblur="validacaoCpf()" maxlength="14" onkeyup="mascaraCpf()" required>
-                        </div>
+            <!-- Botão para enviar o formulário -->
+            <div class="campo-inteiro">
+                <input type="submit" id="botaoSubmit" value="registrar" onclick="validaForm()">
+            </div>
 
-                        <!-- Campo do sobrenome com legenda "RG" e css de classe "campo" -->
-                        <div class="campo">
-                            <label for="rg"><strong>RG (*)</strong></label>
-                            <input type="text" name="rg" id="rg" placeholder="Digite somente numeros"
-                                onblur="validacaoRg()" maxlength="12" required onkeyup="mascaraRg()">
-                        </div>
-
-                        <!-- Campo do sobrenome com legenda "Telefone Fixo" e css de classe "campo" -->
-                        <div class="campo">
-                            <label for="telefoneFixo"><strong>Telefone Fixo (*)</strong></label>
-                            <input type="text" name="telefoneFixo" id="telefoneFixo" placeholder="" required>
-                        </div>
-
-                        <!-- Campo do sobrenome com legenda "Telefone Celular" e css de classe "campo" -->
-                        <div class="campo">
-                            <label for="telefoneCelular"><strong>Telefone Celular (*)</strong></label>
-                            <input type="text" name="telefoneCelular" id="telefoneCelular" placeholder="" required>
-                        </div>
-
-
-                        <!-- Campo de email-->
-                        <div class="campo">
-                            <label for="email"><strong>Email</strong></label>
-                            <input type="email" name="email" id="email">
-                        </div>
-
-                        <!-- Campo de senioridade com 3 opções para escolha (select option) e css de classe "campo" -->
-                        <div class="campo">
-                            <label for="orientacaoSexual"><strong>Orientação sexual (*)</strong></label>
-                            <select id="orientacaoSexual" required>
-                                <option selected disabled value="">Selecione</option>
-                                <option>Masculino</option>
-                                <option>Feminino</option>
-                                <option>Homem transgênero</option>
-                                <option>Mulher transgênero</option>
-                                <option>Homem transexual</option>
-                                <option>Mulher transexual</option>
-                                <option>Cisgênero</option>
-                                <option>Não sei responder</option>
-                                <option>Prefiro não responder</option>
-                                <option>Outros</option>
-                            </select>
-                        </div>
-                    </fieldset>
-                </div>
-
-                <div id="endereco">
-                    <legend>
-                        <h3>
-                            Informações de endereço
-                        </h3>
-                    </legend>
-                    <br>
-                    <fieldset class="grupo">
-                        <div class="campo">
-                            <label for="cep"><strong>CEP (*)</strong></label>
-                            <input type="text" name="cep" id="cep" placeholder="Digite somente numeros" maxlength="9"
-                                onkeyup="mascaraCep()" required>
-                            <button class="botaoValidar" type="button" onclick="validacaoCep()">Validar CEP</button>
-                        </div>
-                        <div class="campo">
-                            <label for="logradouro"><strong>Logradouro(*)</strong></label>
-                            <input type="text" name="logradouro" id="logradouro" required>
-                        </div>
-                        <div class="campo">
-                            <label for="complemento"><strong>Complemento</strong></label>
-                            <input type="text" name="complemento" id="complemento">
-                        </div>
-                        <div class="campo">
-                            <label for="numero"><strong>Numero (*)</strong></label>
-                            <input type="text" name="numero" id="numero" placeholder="Digite somente numeros" required>
-                        </div>
-                        <div class="campo">
-                            <label for="bairro"><strong>Bairro(*)</strong></label>
-                            <input type="text" name="bairro" id="bairro" required>
-                        </div>
-                        <div class="campo">
-                            <label for="cidade"><strong>Cidade(*)</strong></label>
-                            <input type="text" name="cidade" id="cidade" required>
-                        </div>
-                        <div class="campo">
-                            <label for="Estado"><strong>Estado(*)</strong></label>
-                            <input type="text" name="estado" id="estado" required>
-                        </div>
-                    </fieldset>
-
-                </div>
-                <!-- Espaço de seleção com Radio button para o usuário dizer se tem deficiência caso possua -->
-                <div>
-                    <label><strong>Possui algum tipo de deficiência?:</strong></label><br><br>
-                    <label id="radioButton">
-                        <input type="radio" name="possuiDeficiencia" value="nao" checked> Nao
-                    </label>
-                    <label id="radioButton">
-                        <input type="radio" name="possuiDeficiencia" value="sim"> Sim
-                    </label>
-                </div>
-
-
-                <!-- Caixa de texto -->
-                <div class="campo">
-                    <br>
-                    <label for="descricaoDeficiencia"><strong>Se possuir alguma deficiência, por favor descreva abaixo:
-                        </strong></label>
-                    <textarea rows="8" style="width: 26em" id="descricaoDeficienca"
-                        name="descricaoDeficiencia"></textarea>
-                </div>
-
-                <!-- Botão para enviar o formulário -->
-                <button class="botao" type="submit" onsubmit="">Enviar cadastro</button>
-            
         </form>
     </div>
-
+    <footer class = "rodape">
+        <div class="Copyright">
+            &#169; 2021 - Todos os direitos reservados - Powered by André Luis
+        </div>
+    </br>
+        <ul class= "linksRodape">
+            <li><a title="Link Desafio" target="_blank" href="https://itautech.gama.academy/">Programa de formação Tech Itaú</a></li>
+            <li>|</li>
+            <li><a title="Github" target="_blank" href="">Github</a></li>
+            <li>|</li>
+            <li><a title="Linkedin" target="_blank" href="https://www.linkedin.com/in/andré-luis-borges-oliveira-0985b4132/">Linkedin</a></li>
+        </ul>
+    </footer>
 
 </body>
 <script src="scripts\script-cpf.js"></script>
 <script src="scripts\script-rg.js"></script>
 <script src="scripts\script-cep.js"></script>
+<script src="scripts\form-validation.js"></script>
 
 
 </html>

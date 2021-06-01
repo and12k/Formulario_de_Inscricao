@@ -71,6 +71,7 @@ function validaCpf(cpf) {
 function mascaraCpf() {
     console.log("1º: " + cpf.value)
     cpf.value = formulaMascaraCpf(cpf.value)
+    
 }
 
 function formulaMascaraCpf(cpf) {

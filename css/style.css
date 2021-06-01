@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+    border: none;
+    color: black;
+}
+input, label{
+    display: block;
+    width: 100%;
+}
+#radioButton{
+    display: inline;
+    width: 5%;
+    
+} 
+input:focus, label:focus{
+    outline: none;
+}
+
+a{
+    color: black;
+}
+
+body{
+    padding-top: 5%;
+    
+    background-image: url('https://veja.abril.com.br/wp-content/uploads/2018/01/bancos-paulista-gl-5.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+#main-container {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+#main-container h1, p{
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1,6rem;
+}
+
+.grupo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.campo-inteiro{
+    flex: 1 1 100%;
+    position: relative;
+}
+.campo-metade{
+    flex: 1 1 45%;
+}
+ 
+textarea{
+    border: 1px solid black;
+    border-radius: 3%;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    margin-bottom: 10px;
+}
+input{
+    border-bottom: 2px solid #323232;
+    padding: 10px;
+    font-size: .9rem;
+    margin-bottom: 40px;
+}
+select{
+    border-bottom: 2px solid #323232;
+    padding: 5px;
+    font-size: .9rem;
+    margin-bottom: 40px;
+}
+select:focus{
+    border-color: #ff7200;
+}
+.espaco{
+    margin-right: 2.5%;
+}
+label{
+    font-weight: bold;
+    font-size: .8rem ;
+}
+input:focus{
+    border-color: #ff7200;
+}
+
+input[type="submit"]{
+    background-color:  #140083;
+    color: #ff7200;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: x-large;
+}
+.rodape {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	width: 100%;
+	padding: 20px;
+	background-color: #140083;
+	border-top: 10px solid #ff7200;
+	color: white;
+	font-weight: bold;
+    
+	}
+
+.Copyright{
+    color: white;
+}
+
+.linksRodape {
+	display: flex;
+	justify-content: center;
+}
+
+.linksRodape li {
+	margin-left: 5px;
+	margin-right: 5px;	
+	list-style: none;
+}
+
+.linksRodape li a {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+
+
