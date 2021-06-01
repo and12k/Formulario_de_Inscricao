@@ -53,15 +53,15 @@ if (erros){
 }
 
 if(telefoneFixo != "" & complemento !="" ){
-    alert ("Seus dados foram salvos, confira: \nNome: "+name+"\nCPF: "+cpf+"\nRG: "+rg+"\nTelefone Fixo: "+telefoneFixo+"\nTelefone celular: "+telefoneCelular+"\nCep: "+cep+"\nLogradouro: "+logradouro+"\nNumero: "+numero+ "\nComplemento: "+complemento+"\nBairro: "+bairro+"\nCidade"+cidade+"\nEstado"+estado+"\nPossui alguma decifiência?: "+ possuiDeficiencia)
+    alert ("Seus dados foram salvos, confira: \nNome: "+name+"\nCPF: "+cpf+"\nRG: "+rg+"\nTelefone Fixo: "+telefoneFixo+"\nTelefone celular: "+telefoneCelular+"\nCep: "+cep+"\nLogradouro: "+logradouro+"\nNumero: "+numero+ "\nComplemento: "+complemento+"\nBairro: "+bairro+"\nCidade: "+cidade+"\nEstado: "+estado+"\nPossui alguma decifiência?: "+ possuiDeficiencia)
 }
 else if(telefoneFixo != "" ){
-    alert ("Seus dados foram salvos, confira: \nNome: "+name+"\nCPF: "+cpf+"\nRG: "+rg+"\nTelefone Fixo: "+telefoneFixo+"\nTelefone celular: "+telefoneCelular+"\nCep: "+cep+"\nLogradouro: "+logradouro+"\nNumero: "+numero+"\nBairro: "+bairro+"\nCidade"+cidade+"\nEstado"+estado+"\nPossui alguma decifiência?: "+ possuiDeficiencia)
+    alert ("Seus dados foram salvos, confira: \nNome: "+name+"\nCPF: "+cpf+"\nRG: "+rg+"\nTelefone Fixo: "+telefoneFixo+"\nTelefone celular: "+telefoneCelular+"\nCep: "+cep+"\nLogradouro: "+logradouro+"\nNumero: "+numero+"\nBairro: "+bairro+"\nCidade: "+cidade+"\nEstado: "+estado+"\nPossui alguma decifiência?: "+ possuiDeficiencia)
 }
 else if(complemento != "" ){
-    alert ("Seus dados foram salvos, confira: \nNome: "+name+"\nCPF: "+cpf+"\nRG: "+rg+"\nTelefone celular: "+telefoneCelular+"\nCep: "+cep+"\nLogradouro: "+logradouro+"\nNumero: "+numero+ "\nComplemento"+complemento+"\nBairro: "+bairro+"\nCidade"+cidade+"\nEstado"+estado+"\nPossui alguma decifiência?: "+ possuiDeficiencia)
+    alert ("Seus dados foram salvos, confira: \nNome: "+name+"\nCPF: "+cpf+"\nRG: "+rg+"\nTelefone celular: "+telefoneCelular+"\nCep: "+cep+"\nLogradouro: "+logradouro+"\nNumero: "+numero+ "\nComplemento: "+complemento+"\nBairro: "+bairro+"\nCidade: "+cidade+"\nEstado: "+estado+"\nPossui alguma decifiência?: "+ possuiDeficiencia)
 }
 else{
-    alert ("Seus dados foram salvos, confira: \nNome: "+name+"\nCPF: "+cpf+"\nRG: "+rg+"\nTelefone celular: "+telefoneCelular+"\nCep: "+cep+"\nLogradouro: "+logradouro+"\nNumero: "+numero+"\nBairro: "+bairro+"\nCidade"+cidade+"\nEstado"+estado+"\nPossui alguma decifiência?: "+ possuiDeficiencia)
+    alert ("Seus dados foram salvos, confira: \nNome: "+name+"\nCPF: "+cpf+"\nRG: "+rg+"\nTelefone celular: "+telefoneCelular+"\nCep: "+cep+"\nLogradouro: "+logradouro+"\nNumero: "+numero+"\nBairro: "+bairro+"\nCidade: "+cidade+"\nEstado: "+estado+"\nPossui alguma decifiência?: "+ possuiDeficiencia)
 }
 }
