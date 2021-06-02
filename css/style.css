@@ -6,6 +6,19 @@
     border: none;
     color: black;
 }
+
+.cabecalho{
+    display: flex;
+	flex-direction: column;
+	text-align: center;
+	width: 100%;
+	padding: 20px;
+	background-color: #140083;
+	border-bottom: 10px solid #ff7200;
+	color: white;
+	font-weight: bold;
+    
+}
 input, label{
     display: block;
     width: 100%;
@@ -24,8 +37,6 @@ a{
 }
 
 body{
-    padding-top: 5%;
-    
     background-image: url('https://veja.abril.com.br/wp-content/uploads/2018/01/bancos-paulista-gl-5.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -33,6 +44,8 @@ body{
 }
 
 #main-container {
+    margin-top: 1%;
+    margin-bottom: 1%;
     width: 700px;
     margin-left: auto;
     margin-right: auto;
