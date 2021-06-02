@@ -14,7 +14,7 @@
 	width: 100%;
 	padding: 20px;
 	background-color: #140083;
-	border-bottom: 10px solid ##ffef00;
+	border-bottom: 10px solid #ffef00;
 	color: white;
 	font-weight: bold;
     
@@ -121,7 +121,7 @@ input[type="submit"]{
 	width: 100%;
 	padding: 20px;
 	background-color: #140083;
-	border-top: 10px solid ##ffef00;
+	border-top: 10px solid #ffef00;
 	color: white;
 	font-weight: bold;
     
