@@ -3,6 +3,7 @@ function validaForm(){
 let name = document.getElementById("nome").value;
 let cpf = document.getElementById("cpf").value;
 let rg = document.getElementById("rg").value;
+let orientacaoSexual = document.getElementById("orientacaoSexual").value;
 let cep = document.getElementById("nome").value;
 let logradouro = document.getElementById("logradouro").value;
 let numero = document.getElementById("numero").value;
@@ -43,7 +44,7 @@ if (cidade == "" ){
 if (estado == "" ){
     erros += "Estado\n"
 }
-if (telefoneCelular == "" ){
+if (telefoneCelular == ""){
     erros += "Telefone celular\n"
 }
 
@@ -53,15 +54,15 @@ if (erros){
 }
 
 if(telefoneFixo != "" & complemento !="" ){
-    alert ("Seus dados foram salvos, confira: \nNome: "+name+"\nCPF: "+cpf+"\nRG: "+rg+"\nTelefone Fixo: "+telefoneFixo+"\nTelefone celular: "+telefoneCelular+"\nCep: "+cep+"\nLogradouro: "+logradouro+"\nNumero: "+numero+ "\nComplemento: "+complemento+"\nBairro: "+bairro+"\nCidade: "+cidade+"\nEstado: "+estado+"\nPossui alguma decifiência?: "+ possuiDeficiencia)
+    alert ("Seus dados foram salvos, confira: \nNome: "+name+"\nCPF: "+cpf+"\nRG: "+rg+"\nTelefone Fixo: "+telefoneFixo+"\nTelefone celular: "+telefoneCelular+"\nOrientação Sexual: "+orientacaoSexual+"\nCep: "+cep+"\nLogradouro: "+logradouro+"\nNumero: "+numero+ "\nComplemento: "+complemento+"\nBairro: "+bairro+"\nCidade: "+cidade+"\nEstado: "+estado+"\nPossui alguma decifiência?: "+ possuiDeficiencia)
 }
 else if(telefoneFixo != "" ){
-    alert ("Seus dados foram salvos, confira: \nNome: "+name+"\nCPF: "+cpf+"\nRG: "+rg+"\nTelefone Fixo: "+telefoneFixo+"\nTelefone celular: "+telefoneCelular+"\nCep: "+cep+"\nLogradouro: "+logradouro+"\nNumero: "+numero+"\nBairro: "+bairro+"\nCidade: "+cidade+"\nEstado: "+estado+"\nPossui alguma decifiência?: "+ possuiDeficiencia)
+    alert ("Seus dados foram salvos, confira: \nNome: "+name+"\nCPF: "+cpf+"\nRG: "+rg+"\nTelefone Fixo: "+telefoneFixo+"\nTelefone celular: "+telefoneCelular+"\nOrientação Sexual: "+orientacaoSexual+"\nCep: "+cep+"\nLogradouro: "+logradouro+"\nNumero: "+numero+"\nBairro: "+bairro+"\nCidade: "+cidade+"\nEstado: "+estado+"\nPossui alguma decifiência?: "+ possuiDeficiencia)
 }
 else if(complemento != "" ){
-    alert ("Seus dados foram salvos, confira: \nNome: "+name+"\nCPF: "+cpf+"\nRG: "+rg+"\nTelefone celular: "+telefoneCelular+"\nCep: "+cep+"\nLogradouro: "+logradouro+"\nNumero: "+numero+ "\nComplemento: "+complemento+"\nBairro: "+bairro+"\nCidade: "+cidade+"\nEstado: "+estado+"\nPossui alguma decifiência?: "+ possuiDeficiencia)
+    alert ("Seus dados foram salvos, confira: \nNome: "+name+"\nCPF: "+cpf+"\nRG: "+rg+"\nTelefone celular: "+telefoneCelular+"\nOrientação Sexual: "+orientacaoSexual+"\nCep: "+cep+"\nLogradouro: "+logradouro+"\nNumero: "+numero+ "\nComplemento: "+complemento+"\nBairro: "+bairro+"\nCidade: "+cidade+"\nEstado: "+estado+"\nPossui alguma decifiência?: "+ possuiDeficiencia)
 }
 else{
-    alert ("Seus dados foram salvos, confira: \nNome: "+name+"\nCPF: "+cpf+"\nRG: "+rg+"\nTelefone celular: "+telefoneCelular+"\nCep: "+cep+"\nLogradouro: "+logradouro+"\nNumero: "+numero+"\nBairro: "+bairro+"\nCidade: "+cidade+"\nEstado: "+estado+"\nPossui alguma decifiência?: "+ possuiDeficiencia)
+    alert ("Seus dados foram salvos, confira: \nNome: "+name+"\nCPF: "+cpf+"\nRG: "+rg+"\nTelefone celular: "+telefoneCelular+"\nOrientação Sexual: "+orientacaoSexual+"\nCep: "+cep+"\nLogradouro: "+logradouro+"\nNumero: "+numero+"\nBairro: "+bairro+"\nCidade: "+cidade+"\nEstado: "+estado+"\nPossui alguma decifiência?: "+ possuiDeficiencia)
 }
 }
